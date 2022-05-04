@@ -8,6 +8,9 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "./dist"),
+    library: "chakra-data-tables",
+    type: "umd",
+    export: "default",
   },
   module: {
     rules: [
