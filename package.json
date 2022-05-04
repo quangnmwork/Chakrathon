@@ -1,6 +1,6 @@
 {
   "name": "chakra-data-tables",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist/bundle.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
