@@ -1,7 +1,7 @@
 {
   "name": "chakra-data-tables",
   "version": "0.1.2",
-  "main": "./dist/bundle.js",
+  "main": "dist/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -62,3 +62,4 @@
     "webpack-cli": "^4.9.2"
   }
 }
+
