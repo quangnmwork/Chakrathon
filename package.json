@@ -1,7 +1,11 @@
 {
   "name": "chakra-data-tables",
   "version": "0.1.4",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -10,9 +14,10 @@
     "@types/node": "^16.11.33",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "5.0.1",
+    "rollup-plugin-delete": "^2.0.0",
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
   },
@@ -23,17 +28,13 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "webpack": "webpack"
+    "rollup": "rollup -c -w"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
-  },
-  "peerDependencies": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
   },
   "browserslist": {
     "production": [
@@ -48,6 +49,9 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
@@ -56,9 +60,11 @@
     "@storybook/manager-webpack5": "^6.4.22",
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "^0.0.11",
-    "css-loader": "^6.7.1",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.3.0",
-    "webpack-cli": "^4.9.2"
+    "rollup": "^2.72.0",
+    "rollup-plugin-dts": "^4.2.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-loader": "^9.3.0"
   }
 }
