@@ -1,7 +1,12 @@
-import { storiesOf } from "@storybook/react";
-import Button from "../components/Button/Button";
+import { Story } from '@storybook/react';
+import Button from '../components/Button/Button';
 
-const stories = storiesOf("App test", module);
-stories.add("App", () => {
-  return <Button textDisplay="Testing" />;
-});
+export default {
+  title: 'Button',
+  component: Button
+};
+const Template: Story<{ textDisplay: string }> = (args: any) => (
+  <Button {...args} />
+);
+export const Primary = Template.bind({});
+Primary.args = { textDisplay: 'string' };
