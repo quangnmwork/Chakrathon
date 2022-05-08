@@ -1,5 +1,4 @@
-import { Th } from '@chakra-ui/react';
-import React from 'react';
+import { Th } from '@chakra-ui/table';
 import { IHeading } from '../../../model';
 interface StateProps {
   title: IHeading;

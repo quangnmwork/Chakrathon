@@ -1,15 +1,24 @@
-import { ChakraProvider, StylesProvider } from '@chakra-ui/react';
-
 import { IHeading } from '../../model';
 import TableDataContainer from './TableContainer/TableDataContainer';
-
+import { ChakraProvider, Button } from '@chakra-ui/react';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer
+} from '@chakra-ui/react';
 interface StateProps {
   titles: IHeading[];
 }
 const TableData = (props: StateProps) => {
   return (
     <ChakraProvider>
-      <TableDataContainer titles={props.titles}></TableDataContainer>
+      <Button colorScheme="blue">Hello</Button>
     </ChakraProvider>
   );
 };
