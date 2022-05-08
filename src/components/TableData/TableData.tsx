@@ -1,5 +1,5 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import React from 'react';
+import { ChakraProvider, StylesProvider } from '@chakra-ui/react';
+
 import { IHeading } from '../../model';
 import TableDataContainer from './TableContainer/TableDataContainer';
 
