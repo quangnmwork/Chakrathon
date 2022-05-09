@@ -1,4 +1,4 @@
-import { TableContainer, Tbody, Thead } from '@chakra-ui/react';
+import { Table, TableContainer, Tbody, Thead } from '@chakra-ui/react';
 
 import { IHeading } from '../../../model';
 import TableHeading from '../TableHeading/TableHeading';
@@ -8,12 +8,13 @@ interface StateProps {
 const TableDataContainer = (props: StateProps) => {
   return (
     <TableContainer>
-      <Thead>
-        {props.titles.map((title: IHeading, index) => (
-          <TableHeading key={index} title={title} />
-        ))}
-      </Thead>
-      <Tbody></Tbody>
+      <Table>
+        <Thead>
+          {props.titles.map((title: IHeading, index) => (
+            <TableHeading key={index} title={title} />
+          ))}
+        </Thead>
+      </Table>
     </TableContainer>
   );
 };

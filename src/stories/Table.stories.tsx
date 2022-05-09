@@ -1,11 +1,15 @@
-import { Story } from '@storybook/react';
-import Button from '../components/Button/Button';
-import TableData from '../components/TableData/TableData';
+import { Button } from '@chakra-ui/react';
+import TableDataContainer from '../components/TableData/TableContainer';
+import { IHeading } from '../model';
 
 export default {
-  title: 'TableData',
-  component: TableData
+  title: 'Table/TableData',
+  component: TableDataContainer
 };
-const Template: any = (args: any) => <TableData {...args} />;
-export const Primary = Template.bind({});
-Primary.args = { titles: ['Heading'] };
+const TableDataTitles: IHeading[] = [
+  { title: 'ID' },
+  { title: <Button>Guys</Button> }
+];
+export const TableData = () => {
+  return <TableDataContainer titles={TableDataTitles} />;
+};
