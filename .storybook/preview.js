@@ -1,3 +1,5 @@
+import theme from './../src/theme';
+// addDecorator(story => <ChakraProvider theme={theme}>{story()}</ChakraProvider>);
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -6,5 +8,5 @@ export const parameters = {
       date: /Date$/
     }
   },
-  chakra: {}
+  chakra: { theme }
 };

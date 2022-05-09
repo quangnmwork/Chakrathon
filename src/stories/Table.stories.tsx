@@ -1,6 +1,9 @@
 import { Box, Button, Text } from '@chakra-ui/react';
-import { useData, useTitle } from '../components/services/useTitle';
+import { TableDataRow } from '../components';
+import { useData } from '../components/services/useData';
+import { useTitle } from '../components/services/useTitle';
 import TableData from '../components/TableData';
+import TableHeading from '../components/TableData/TableDataHeading';
 
 export default {
   title: 'Table/TableData',
@@ -12,5 +15,10 @@ const data = useData([
   ['2', 'Toan', <Button padding={'0'}>Click me</Button>]
 ]);
 export const Table = () => {
-  return <TableData titles={titles} data={data} />;
+  return (
+    <TableData variant={'striped'} colorScheme={'red'}>
+      <TableHeading titles={titles} />
+      <TableDataRow data={data} TdStyles={{ minWidth: '500px' }} />
+    </TableData>
+  );
 };

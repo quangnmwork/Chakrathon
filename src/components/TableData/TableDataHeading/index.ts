@@ -1,1 +1,1 @@
-export { default } from './TableHeading';
+export { default } from './TableDataHeading';
