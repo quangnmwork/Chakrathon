@@ -1,5 +1,4 @@
 import React from 'react';
 
-export interface IHeading {
-  title: string | React.ReactNode;
-}
+export type IRow = string | React.ReactNode | boolean | number;
+export type IRows = IRow[][];

@@ -1,15 +1,16 @@
-import { Button } from '@chakra-ui/react';
-import TableDataContainer from '../components/TableData/TableContainer';
-import { IHeading } from '../model';
+import { Box, Button, Text } from '@chakra-ui/react';
+import { useData, useTitle } from '../components/services/useTitle';
+import TableData from '../components/TableData';
 
 export default {
   title: 'Table/TableData',
-  component: TableDataContainer
+  component: TableData
 };
-const TableDataTitles: IHeading[] = [
-  { title: 'ID' },
-  { title: <Button>Guys</Button> }
-];
-export const TableData = () => {
-  return <TableDataContainer titles={TableDataTitles} />;
+const titles = useTitle(['Id', 'Username', <Text color={'red'}>Warning</Text>]);
+const data = useData([
+  ['1', 'Quang', <Box padding={'0'}>1,2,3</Box>],
+  ['2', 'Toan', <Button padding={'0'}>Click me</Button>]
+]);
+export const Table = () => {
+  return <TableData titles={titles} data={data} />;
 };
