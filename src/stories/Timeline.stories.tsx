@@ -13,7 +13,55 @@ export default {
   title: 'Timeline'
 };
 
-export const Default = () => {
+export const DefaultTimeline = () => {
+  return (
+    <TimelineContainer>
+      <TimelineItem>
+        <TimelineSeperator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeperator>
+        <TimelineContent>
+          <Text color={'black'}>Hello</Text>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeperator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeperator>
+        <TimelineContent>
+          <Text color={'black'}>Hello</Text>
+        </TimelineContent>
+      </TimelineItem>
+    </TimelineContainer>
+  );
+};
+export const DefaultTimelinePosition = () => {
+  return (
+    <TimelineContainer position={'left'}>
+      <TimelineItem>
+        <TimelineSeperator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeperator>
+        <TimelineContent>
+          <Text color={'black'}>Hello</Text>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeperator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeperator>
+        <TimelineContent>
+          <Text color={'black'}>Hello</Text>
+        </TimelineContent>
+      </TimelineItem>
+    </TimelineContainer>
+  );
+};
+export const DefaultTimelineMix = () => {
   return (
     <TimelineContainer position={'mix'}>
       <TimelineItem>
@@ -21,7 +69,9 @@ export const Default = () => {
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeperator>
-        <TimelineContent></TimelineContent>
+        <TimelineContent>
+          <Text color={'black'}>Hello</Text>
+        </TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineSeperator>

@@ -19,10 +19,13 @@ const positionHandle = (position: 'right' | 'left' | 'mix') => {
   if (position == 'mix') {
     returnCSS._even = {
       flexDirection: 'row-reverse',
+      textAlign: 'right',
+
       _before: { content: "''", flex: 1, padding: '5px 10px' }
     };
     returnCSS._odd = {
       flexDirection: 'row',
+      textAlign: 'left',
       _before: { content: "''", flex: 1, padding: '5px 10px' }
     };
   }

@@ -1,4 +1,8 @@
-import { extendTheme } from '@chakra-ui/react';
+import { color, ColorModeProviderProps, extendTheme } from '@chakra-ui/react';
+
+interface ColorMode {
+  colorMode: 'light' | 'dark';
+}
 
 const TimelineContainer = {
   baseStyle: {
@@ -24,33 +28,62 @@ const TimelineItem = {
   defaultProps: {}
 };
 const TimelineContent = {
-  baseStyle: {
+  baseStyle: ({ colorMode }: ColorMode) => ({
     flex: 1,
     minHeight: '50px',
     bgColor: 'white',
-    boxShadow: 'sm',
+    borderWidth: '1px',
+    borderColor: colorMode == 'dark' ? '' : 'black.100',
     borderRadius: 'md',
     padding: '5px 10px'
-  }
+  })
 };
 const TimelineDot = {
   baseStyle: {
     display: 'flex',
-    width: '10px',
-    height: '10px',
+    width: '20px',
+    height: '20px',
     borderRadius: '50%',
     bgColor: 'white',
-    alignSelf: 'baseline'
+    alignSelf: 'baseline',
+    position: 'relative'
+  },
+  variants: {
+    solid: ({ colorMode }: ColorMode) => ({
+      bgColor: colorMode == 'dark' ? 'white' : 'gray.300'
+    }),
+    outline: ({ colorMode }: ColorMode) => ({
+      bgColor: colorMode == 'dark' ? 'inherit' : 'white',
+      borderColor: colorMode == 'dark' ? 'white' : 'gray.300',
+      borderWidth: '1px'
+    }),
+    dots: ({ colorMode }: ColorMode) => ({
+      borderColor: colorMode == 'dark' ? 'white' : 'gray.300',
+      borderWidth: '1px',
+      _after: {
+        content: "''",
+        width: '10px',
+        height: '10px',
+        borderRadius: '50%',
+        position: 'absolute',
+        bgColor: colorMode == 'dark' ? 'red' : 'gray.300',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%,-50%)'
+      }
+    })
+  },
+  defaultProps: {
+    variant: 'dots'
   }
 };
 const TimelineConnector = {
-  baseStyle: {
-    width: '3px',
-
-    bgColor: 'white',
+  baseStyle: ({ colorMode }: ColorMode) => ({
+    width: '5px',
+    bgColor: colorMode == 'dark' ? 'white' : 'gray.300',
     my: '5px',
     flexGrow: 1
-  }
+  })
 };
 export const theme = extendTheme({
   components: {
