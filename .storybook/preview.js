@@ -1,4 +1,4 @@
-import theme from './../src/theme';
+import { theme } from './../src/theme';
 // addDecorator(story => <ChakraProvider theme={theme}>{story()}</ChakraProvider>);
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

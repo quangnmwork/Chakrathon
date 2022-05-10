@@ -15,10 +15,5 @@ const data = useData([
   ['2', 'Toan', <Button padding={'0'}>Click me</Button>]
 ]);
 export const Table = () => {
-  return (
-    <TableData variant={'striped'} colorScheme={'red'}>
-      <TableHeading titles={titles} />
-      <TableDataRow data={data} TdStyles={{ minWidth: '500px' }} />
-    </TableData>
-  );
+  return <TableData variant={'striped'} colorScheme={'red'}></TableData>;
 };

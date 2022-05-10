@@ -1,23 +1,64 @@
 import { extendTheme } from '@chakra-ui/react';
 
-const TableDataContainer = {
+const TimelineContainer = {
   baseStyle: {
-    boxShadow: 'md',
-    background: 'blue'
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '5px',
+    padding: '6px 16px',
+    flexGrow: 1
   },
-  variants: {
-    rounded: {
-      borderRadius: 'xl',
-      boxShadow: 'xl'
-    },
-    smooth: {
-      borderRadius: '2px',
-      boxShadow: 'md'
-    }
-  },
-  // The default variant value
-  defaultProps: {
-    variant: 'smooth'
+  variants: {},
+  defaultProps: {}
+};
+const TimelineSeparator = {
+  baseStyle: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column'
   }
 };
-export const theme = extendTheme({ components: { TableDataContainer } });
+const TimelineItem = {
+  baseStyle: { display: 'flex', gap: '10px' },
+  variants: {},
+  defaultProps: {}
+};
+const TimelineContent = {
+  baseStyle: {
+    flex: 1,
+    minHeight: '50px',
+    bgColor: 'white',
+    boxShadow: 'sm',
+    borderRadius: 'md',
+    padding: '5px 10px'
+  }
+};
+const TimelineDot = {
+  baseStyle: {
+    display: 'flex',
+    width: '10px',
+    height: '10px',
+    borderRadius: '50%',
+    bgColor: 'white',
+    alignSelf: 'baseline'
+  }
+};
+const TimelineConnector = {
+  baseStyle: {
+    width: '3px',
+
+    bgColor: 'white',
+    my: '5px',
+    flexGrow: 1
+  }
+};
+export const theme = extendTheme({
+  components: {
+    TimelineContainer,
+    TimelineItem,
+    TimelineContent,
+    TimelineSeparator,
+    TimelineDot,
+    TimelineConnector
+  }
+});
