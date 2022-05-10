@@ -9,11 +9,16 @@ const TimelineContainer = {
     display: 'flex',
     flexDirection: 'column',
     gap: '5px',
-    padding: '6px 16px',
+
     flexGrow: 1
   },
+  sizes: {
+    sm: { width: '32rem' },
+    md: { width: '48rem' },
+    lg: { width: '64rem' }
+  },
   variants: {},
-  defaultProps: {}
+  defaultProps: { size: 'lg' }
 };
 const TimelineSeparator = {
   baseStyle: {
@@ -23,8 +28,9 @@ const TimelineSeparator = {
   }
 };
 const TimelineItem = {
-  baseStyle: { display: 'flex', gap: '10px' },
+  baseStyle: { display: 'flex', gap: 'md' },
   variants: {},
+
   defaultProps: {}
 };
 const TimelineContent = {
@@ -36,7 +42,8 @@ const TimelineContent = {
     borderColor: colorMode == 'dark' ? '' : 'black.100',
     borderRadius: 'md',
     padding: '5px 10px'
-  })
+  }),
+  sizes: {}
 };
 const TimelineDot = {
   baseStyle: {
@@ -73,6 +80,7 @@ const TimelineDot = {
       }
     })
   },
+  sizes: {},
   defaultProps: {
     variant: 'dots'
   }
@@ -83,7 +91,8 @@ const TimelineConnector = {
     bgColor: colorMode == 'dark' ? 'white' : 'gray.300',
     my: '5px',
     flexGrow: 1
-  })
+  }),
+  sizes: {}
 };
 export const theme = extendTheme({
   components: {

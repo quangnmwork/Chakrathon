@@ -104,3 +104,27 @@ export const DefaultTimelineMix = () => {
     </TimelineContainer>
   );
 };
+export const DefaultTimelineWithSize = () => {
+  return (
+    <TimelineContainer position={'mix'} size={'sm'}>
+      <TimelineItem>
+        <TimelineSeperator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeperator>
+        <TimelineContent>
+          <CardContent />
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeperator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeperator>
+        <TimelineContent>
+          <CardContent />
+        </TimelineContent>
+      </TimelineItem>
+    </TimelineContainer>
+  );
+};
