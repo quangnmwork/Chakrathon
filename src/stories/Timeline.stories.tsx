@@ -15,7 +15,7 @@ export default {
 
 export const Default = () => {
   return (
-    <TimelineContainer>
+    <TimelineContainer position={'mix'}>
       <TimelineItem>
         <TimelineSeperator>
           <TimelineDot />
