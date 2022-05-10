@@ -9,7 +9,6 @@ const TimelineContainer = {
     display: 'flex',
     flexDirection: 'column',
     gap: '5px',
-
     flexGrow: 1
   },
   sizes: {
@@ -24,11 +23,12 @@ const TimelineSeparator = {
   baseStyle: {
     display: 'flex',
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    flex: 0
   }
 };
 const TimelineItem = {
-  baseStyle: { display: 'flex', gap: 'md' },
+  baseStyle: { display: 'flex', gap: 'md', position: 'relative' },
   variants: {},
 
   defaultProps: {}
@@ -45,6 +45,16 @@ const TimelineContent = {
   }),
   sizes: {}
 };
+
+const TimelineInverseContent = {
+  baseStyle: {
+    marginRight: 'auto',
+    textAlign: 'right',
+    flex: 1,
+    padding: '5px 10px'
+  }
+};
+
 const TimelineDot = {
   baseStyle: {
     display: 'flex',
@@ -101,6 +111,7 @@ export const theme = extendTheme({
     TimelineContent,
     TimelineSeparator,
     TimelineDot,
-    TimelineConnector
+    TimelineConnector,
+    TimelineInverseContent
   }
 });

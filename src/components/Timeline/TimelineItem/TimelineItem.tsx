@@ -1,12 +1,16 @@
 import { Box, useStyleConfig } from '@chakra-ui/react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { TimelineContext } from '../../services/TimelineProvider';
-const positionHandle = (position: 'right' | 'left' | 'mix') => {
+const positionHandle = (
+  position: 'right' | 'left' | 'mix',
+  isInverse: boolean
+) => {
   const returnCSS = {
     _even: {},
     _odd: {},
     flexDirection: '',
-    textAlign: ''
+    textAlign: '',
+    _before: {}
   };
   if (position == 'left') {
     returnCSS.flexDirection = 'row';
@@ -19,14 +23,21 @@ const positionHandle = (position: 'right' | 'left' | 'mix') => {
   if (position == 'mix') {
     returnCSS._even = {
       flexDirection: 'row-reverse',
-      textAlign: 'right',
+      textAlign: 'right'
 
-      _before: { content: "''", flex: 1, padding: '5px 10px' }
+      // _before: { content: "''", flex: 1, padding: '5px 10px' }
     };
     returnCSS._odd = {
       flexDirection: 'row',
-      textAlign: 'left',
-      _before: { content: "''", flex: 1, padding: '5px 10px' }
+      textAlign: 'left'
+      // _before: { content: "''", flex: 1, padding: '5px 10px' }
+    };
+  }
+  if (!isInverse) {
+    returnCSS._before = {
+      content: "''",
+      flex: 1,
+      padding: '5px 10px'
     };
   }
   return returnCSS;
@@ -34,10 +45,17 @@ const positionHandle = (position: 'right' | 'left' | 'mix') => {
 
 const TimelineItem = (props: any) => {
   const { variant, ...rest } = props;
+  let isInverse = React.Children.count(props.children) > 2 ? true : false;
   const { position } = useContext(TimelineContext);
 
   const styles = useStyleConfig('TimelineItem', { variant });
-  return <Box __css={styles} {...positionHandle(position)} {...rest}></Box>;
+  return (
+    <Box
+      __css={styles}
+      {...positionHandle(position, isInverse)}
+      {...rest}
+    ></Box>
+  );
 };
 
 export default TimelineItem;

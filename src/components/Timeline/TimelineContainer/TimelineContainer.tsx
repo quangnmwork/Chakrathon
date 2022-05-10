@@ -8,7 +8,7 @@ const TimelineContainer = (props: any | StateProps) => {
   const { variant, ...rest } = props;
 
   const styles = useStyleConfig('TimelineContainer', { variant });
-  const position = props.position || 'right';
+  const position = props.position || 'left';
   return (
     <TimelineContext.Provider value={{ position }}>
       <Box __css={styles} {...rest}></Box>
