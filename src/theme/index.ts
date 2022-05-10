@@ -1,4 +1,4 @@
-import { color, ColorModeProviderProps, extendTheme } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 
 interface ColorMode {
   colorMode: 'light' | 'dark';
@@ -66,7 +66,7 @@ const TimelineDot = {
         height: '10px',
         borderRadius: '50%',
         position: 'absolute',
-        bgColor: colorMode == 'dark' ? 'red' : 'gray.300',
+        bgColor: 'gray.300',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%,-50%)'
